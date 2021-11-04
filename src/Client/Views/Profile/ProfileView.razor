@@ -1,0 +1,25 @@
+﻿@using Client.ViewModels.Profile
+
+@page "/profile"
+@inherits MyComponentBase<ProfileViewModel>
+
+@if (ViewModel.IsBusy)
+{
+    <p>Fake loading...</p>
+}
+else
+{
+    <h3>Profile view</h3>
+
+    <MudText>View created at: @ViewModel.ViewCreatedAt</MudText>
+    <MudText>Service created at: @ViewModel.ServiceCreatedAt</MudText>
+    <MudText>Serviced updated at: @ViewModel.ServiceUpdatedAt</MudText>
+    <MudTabs Elevation="4" Centered="true" Color="@Color.Primary">
+        <MudTabPanel Text="First">
+            <FirstTabView />
+        </MudTabPanel>
+        <MudTabPanel Text="Second">
+            <SecondTabView />
+        </MudTabPanel>
+    </MudTabs>
+}

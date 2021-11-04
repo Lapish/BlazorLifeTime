@@ -1,0 +1,20 @@
+﻿@using Client.ViewModels.Profile
+
+@inherits MyComponentBase<SecondTabViewModel>
+
+<MudTable Items="@ViewModel.Connections">
+    <HeaderContent>
+        <MudTh>Id</MudTh>
+        <MudTh>Country</MudTh>
+        <MudTh>CreatedAt</MudTh>
+        <MudTh>UpdatedAt</MudTh>
+        <MudTd>UpdatedNumberTimes</MudTd>
+    </HeaderContent>
+    <RowTemplate>
+        <MudTd DataLabel="Id">@context.Id</MudTd>
+        <MudTd DataLabel="Country">@context.Country</MudTd>
+        <MudTd DataLabel="CreatedAt">@context.CreatedAt</MudTd>
+        <MudTd DataLabel="UpdatedAt">@context.UpdatedAt</MudTd>
+        <MudTd DataLabel="UpdatedNumberTimes">@context.UpdatedNumberTimes</MudTd>
+    </RowTemplate>
+</MudTable>
